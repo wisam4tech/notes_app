@@ -8,7 +8,7 @@ class NoteItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 4,
           bottom: 18,
         ),
@@ -20,8 +20,8 @@ class NoteItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title: Padding(
-                padding: const EdgeInsets.all(8.0),
+              title: const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Flutter Tips',
                   style: TextStyle(fontSize: 28, color: Colors.black),
@@ -39,7 +39,7 @@ class NoteItem extends StatelessWidget {
               ),
               trailing: IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete,
                   color: Colors.black,
                   size: 28,
