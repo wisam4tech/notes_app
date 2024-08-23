@@ -4,7 +4,7 @@ import 'package:notes_app/widgets/add_note_buttom_sheet_widget.dart';
 import 'package:notes_app/widgets/notes_view_body_widget.dart';
 
 class NotesView extends StatelessWidget {
-  const NotesView({super.key});
+  NotesView({super.key});
 
   static String id = 'NotesView';
 
@@ -20,7 +20,7 @@ class NotesView extends StatelessWidget {
             ),
             context: context,
             builder: (context) {
-              return const AddNoteBottomSheetWidget();
+              return AddNoteBottomSheetWidget();
             },
           );
         },

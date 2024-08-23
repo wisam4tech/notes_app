@@ -17,7 +17,7 @@ class NotesApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        NotesView.id: (context) => const NotesView(),
+        NotesView.id: (context) => NotesView(),
       },
       initialRoute: NotesView.id,
     );
