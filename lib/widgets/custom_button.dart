@@ -10,7 +10,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final Color buttonColor;
   final Color textColor;
-  VoidCallback? onTap;
+  void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
