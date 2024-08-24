@@ -32,6 +32,7 @@ class CustomTextfield extends StatelessWidget {
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
           hintStyle: const TextStyle(color: kPrimaryColor),
+          errorBorder: borderBiulder(Colors.red),
           enabledBorder: borderBiulder(),
           focusedBorder: borderBiulder(kPrimaryColor),
           contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
