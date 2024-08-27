@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton(
-      {super.key,
-      required this.text,
-      this.onTap,
-      required this.buttonColor,
-      required this.textColor});
+  CustomButton({
+    super.key,
+    required this.text,
+    this.onTap,
+    required this.buttonColor,
+    required this.textColor,
+    this.isLoading = false,
+  });
   final String text;
   final Color buttonColor;
   final Color textColor;
   void Function()? onTap;
+  bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +30,14 @@ class CustomButton extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: 70,
           child: Center(
-            child: Text(
-              text,
-              style: TextStyle(fontSize: 18, color: textColor),
-            ),
+            child: isLoading
+                ? CircularProgressIndicator(
+                    color: Colors.black,
+                  )
+                : Text(
+                    text,
+                    style: TextStyle(fontSize: 18, color: textColor),
+                  ),
           ),
         ),
       ),
