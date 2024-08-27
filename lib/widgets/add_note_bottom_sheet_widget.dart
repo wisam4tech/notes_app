@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/helper/constants.dart';
 import 'package:notes_app/helper/showSnackBar.dart';
 import 'package:notes_app/widgets/add_note_form.dart';
@@ -23,6 +24,7 @@ class AddNoteBottomSheetWidget extends StatelessWidget {
             showSnackBar(context, 'Faild ${state.errMessage}');
           }
           if (state is AddNoteSuccess) {
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
         },
