@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
+import 'package:notes_app/widgets/edit_note_view_body_widget.dart';
 
 class NoteItem extends StatelessWidget {
   NoteItem({super.key, required this.note});
@@ -13,7 +14,14 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditNoteView.id);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return EditNoteView(note: note);
+            },
+          ),
+        );
       },
       child: Padding(
         padding: EdgeInsets.all(4),
